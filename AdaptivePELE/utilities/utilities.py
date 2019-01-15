@@ -12,7 +12,11 @@ import json
 import errno
 from scipy import linalg
 import numpy as np
-import mdtraj as md
+MDTRAJ = True
+try:
+    import mdtraj as md
+except ImportError:
+    MDTRAJ = False
 try:
     import cPickle as pickle
 except ImportError:
@@ -223,6 +227,8 @@ def getSnapshots(trajectoryFile, verbose=False, topology=None):
 
         :returns: iterable -- Snapshots with information
     """
+    if not MDTRAJ:
+        raise UnsatisfiedDependencyException("MDTraj installation not found!")
     # topology parameter is ignored, just here for compatibility purposes
     ext = getFileExtension(trajectoryFile)
     if ext == ".pdb":
