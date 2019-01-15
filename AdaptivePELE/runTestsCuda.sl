@@ -7,7 +7,6 @@
 #SBATCH --cpus-per-task=5
 #SBATCH --time=00:20:00
 #SBATCH --qos=debug
-#SBATCH --constraint=k80
 #SBATCH --gres gpu:2
 
 

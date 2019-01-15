@@ -3,7 +3,11 @@ import os.path
 import numpy as np
 import glob
 import AdaptivePELE.constants
-import mdtraj as md
+MDTRAJ = True
+try:
+    import mdtraj as md
+except ImportError:
+    MDTRAJ = False
 import math
 
 

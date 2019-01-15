@@ -2,7 +2,11 @@ from __future__ import absolute_import, division, print_function, unicode_litera
 from io import open
 import os
 import unittest
-import mdtraj
+MDTRAJ = True
+try:
+    import mdtraj as md
+except ImportError:
+    MDTRAJ = False
 import numpy as np
 import AdaptivePELE.atomset.atomset as atomset
 from AdaptivePELE.atomset import RMSDCalculator

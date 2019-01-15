@@ -7,11 +7,15 @@ import glob
 import re
 import shutil
 import sys
-import mdtraj as md
 import numpy as np
 from AdaptivePELE.atomset import atomset
 from AdaptivePELE.freeEnergies import utils
 from AdaptivePELE.utilities import utilities
+MDTRAJ = True
+try:
+    import mdtraj as md
+except ImportError:
+    MDTRAJ = False
 PARALELLIZATION = True
 try:
     import multiprocessing as mp

@@ -7,9 +7,12 @@ import numpy as np
 import simtk.openmm as mm
 import simtk.openmm.app as app
 import simtk.unit as unit
-import mdtraj as md
+MDTRAJ = True
+try:
+    import mdtraj as md
+except ImportError:
+    MDTRAJ = False
 import AdaptivePELE.adaptiveSampling as adaptiveSampling
-from AdaptivePELE.simulation.openmm_simulations import XTCReporter
 
 
 class TestMD(unittest.TestCase):

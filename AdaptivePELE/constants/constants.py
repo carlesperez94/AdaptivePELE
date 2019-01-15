@@ -134,5 +134,5 @@ class OutputPathConstants():
         self.tmpControlFilename = tmpFolder+"/controlFile%d.conf"
         self.tmpControlFilenameEqulibration = tmpFolder+"/controlFile_equilibration_%d.conf"
 
-md_supported_formats = set(["xtc", "dcd"])
+md_supported_formats = set(["dcd"])
 formats_md_string = ", ".join(md_supported_formats)
